@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>login-signup</title>
+            <link rel="stylesheet" href="./CSS/login-signup.css">
+            <link rel="stylesheet" href="./CSS/style.css">
+            <link rel="stylesheet" href="./css/boxicons.min.css">
+
+              <!--to close open tab on mobileview-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    </head>
+
+
+    <body>
+        <div class="container">
+            <div class="form">
+                <div class="input-group" id="form">
+
+                    <div class="form-front">
+                    <h2>LOGIN</h2>
+                    <form>
+                        <input type="username" class="input-box" placeholder="Username" required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <input type="checkbox"><span>Remember username</span>
+                        <button type="submit" class="submit-btn">Login</button>
+                        <a href="">Forgot password?</a>
+                    </form>
+                    <button type="button" class="btn" onclick="openCreateAccount()">Create Account</button>
+                 </div>
+
+                    <div class="form-back">
+                        <h2>CREATE ACCOUNT</h2>
+                    <form>
+                        <input type="username" class="input-box" placeholder="Username" required>
+                        <input type="email" class="input-box" placeholder="Email address" required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <input type="checkbox"><span>Remember username</span>
+                        <button type="submit" class="submit-btn">Create Account</button>
+                        <a href="">Forgot password?</a>
+                    </form>
+                    <button type="button" class="btn" onclick="openLogin()">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var form = document.getElementById("form");
+
+            function openCreateAccount() {
+                form.style.transform = "rotateY(-180deg)";
+            }
+            function openLogin() {
+                form.style.transform = "rotateY(0deg)";
+            }
+        </script>
+
+
+        <section class="footer">
+            <h4>About Us</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, eos. Voluptatibus molestias nam quasi similique odio! <br>Fugit quaerat itaque quam. Dignissimos recusandae velit a qui doloremque ullam ex praesentium ducimus.</p>
+      
+            <div class="social-links">
+              <i class='bx bxl-facebook-circle' ></i>
+              <i class='bx bxl-twitter' ></i>
+              <i class='bx bxl-twitter' ></i>
+              <i class='bx bxl-youtube' ></i>
+              <i class='bx bxl-linkedin-square' ></i>
+            </div>
+            <p>Copyright <br>Geotag<i class='bx bx-copyright'></i>All rights reserved</p>
+          </section>
+          
+
+    </body>
+</html>
