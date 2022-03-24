@@ -20,20 +20,21 @@
 
   <body>
     <!--NAV BAR--->
-  <section class ="header">
+  <section class ="header" style= "background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(./images/background.jpeg)" >
 
     <div class="user"></div>
-      <a href="login-signup.html"><i class='bx bxs-user' ></i></a>
+      <a href="login-signup.php"><i class='bx bxs-user' ></i></a>
   </div>
 
     <nav>
-        <a class="nav-brand" href="index.html"><img src="/images/logo.png">Geotag<span>.</span></a>
+        <a class="nav-brand" href="index.html"><img src="./images/logo.png">Geotag<span>.</span></a>
         <div class="nav-links" id="navlinks">
           <i class='bx bx-slider' onclick="hideMenu()"></i>
           <ul>
             <li><a href="">HOME</a></li>
             <li><a href="">DESTINATION</a></li>
-            <li><a href="">SEE & TELL</a></li>
+            <li><a href="PHP/blog.php">SEE & TELL</a></li>
             <li><a href="">EVENTS</a></li>
             <li><a href="">ABOUT US</a></li>
           </ul>
@@ -76,21 +77,21 @@
 
       <div class="row">
         <div class="maps-col">
-          <img src="/images/unionstreet.jpeg" alt="union street">
+          <img src="./images/unionstreet.jpeg" alt="union street">
           <div class="layer">
           <h3>Union Street</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias atque ullam nostrum eius commodi consequuntur, culpa provident optio animi tempora at sit reiciendis, voluptates aut nulla, molestiae odio suscipit quod.</p>
           </div>
         </div>
         <div class="maps-col">
-          <img src="/images/marischalcollege.jpeg" alt="Marischal College">
+          <img src="./images/marischalcollege.jpeg" alt="Marischal College">
           <div class="layer">
           <h3>Bridge of Don</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias atque ullam nostrum eius commodi consequuntur, culpa provident optio animi tempora at sit reiciendis, voluptates aut nulla, molestiae odio suscipit quod.</p>
           </div>
         </div>
         <div class="maps-col">
-          <img src="/images/aberdeenbeach.jpeg" alt="Aberdeen beach">
+          <img src="./images/aberdeenbeach.jpeg" alt="Aberdeen beach">
           <div class="layer">
           <h3>Bridge of Dee</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias atque ullam nostrum eius commodi consequuntur, culpa provident optio animi tempora at sit reiciendis, voluptates aut nulla, molestiae odio suscipit quod.</p>
@@ -105,16 +106,17 @@
     <section class="footer">
       <div class="container">
         <div class="row">
-      <div class="about">
-      <h4>About Us</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo, eos. Voluptatibus molestias nam quasi similique <br>odio! Fugit quaerat itaque quam. Dignissimos recusandae <br>velit a qui doloremque ullam ex praesentium ducimus.</p>
-      <div class="social-links">
-        <i class='bx bxl-facebook-circle' ></i>
-        <i class='bx bxl-twitter' ></i>
-        <i class='bx bxl-twitter' ></i>
-        <i class='bx bxl-youtube' ></i>
-        <i class='bx bxl-linkedin-square' ></i>
-      </div>
+          <div class="about">
+          <h4>About Us</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo, eos. Voluptatibus molestias nam quasi similique <br>odio! Fugit quaerat itaque quam. Dignissimos recusandae <br>velit a qui doloremque ullam ex praesentium ducimus.</p>
+    
+           <div class="social-links">
+          <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+          <a href="#"><i class='bx bxl-twitter' ></i></a>
+          <a href="#"><i class='bx bxl-twitter' ></i></a>
+          <a href="#"><i class='bx bxl-youtube' ></i></a>
+          <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+        </div>
       </div>
 
       <div class="copyright">
