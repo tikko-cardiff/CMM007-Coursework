@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
     <head>
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,8 +22,8 @@
                     <div class="form-front">
                     <h2>LOGIN</h2>
                     <form action="login-signup.php" method="post">
-                        <input type="username" class="input-box" placeholder="Username/Email" required>
-                        <input type="password" class="input-box" placeholder="Password" required>
+                        <input type="text" name="username" class="input-box" placeholder="Username/Email" required>
+                        <input type="password" name="password" class="input-box" placeholder="Password" required>
                         <input type="checkbox"><span>Remember username</span>
                         <input type="submit" name= "submit" class="submit-btn" value= "Login">
                         <a href="">Forgot password?</a>
@@ -34,13 +33,12 @@
 
                     <div class="form-back">
                         <h2>CREATE ACCOUNT</h2>
-                    <form action="login-signup.php" method="post">
-                        <input type="username" class="input-box" placeholder="Username" required>
-                        <input type="email" class="input-box" placeholder="Email address" required>
-                        <input type="password" class="input-box" placeholder="Password" required>
-                        <input type="password" class="input-box" placeholder="Confim password" required>
+                        <form action="login-signup.php" method="post">
+                        <input type="text" name="username" class="input-box" placeholder="Username" required>
+                        <input type="text" name= "email" class="input-box" placeholder="Email address" required>
+                        <input type="password" name="password"class="input-box" placeholder="Password" required>
                         <input type="checkbox"><span>Remember username</span>
-                        <input type="submit" name= "submit "class="submit-btn" value= "Create Account"> 
+                        <input type="submit" name= "create"class="submit-btn" value= "Create Account"> 
                         <a href="">Forgot password?</a>
                     </form>
                     <button type="button" class="btn" onclick="openLogin()">Login</button>
@@ -101,10 +99,23 @@ if (isset ($_POST['submit']))
 		}        
 	}
 
-    /*if (empty($_POST["username"]) || empty($_POST["password"]))
-	{
-		echo "Both fields are required.";
-	}else*/
+ else if (isset($_POST['create']) ) 
+{
+    $username = $_POST['username'];
+	$email= $_POST['email'];
+	$password = $_POST['password'];
+	
+  $createsql = "INSERT INTO users (username, password, email) VALUES('$username', '$password', '$email')";
+  $createresult=mysqli_query($db,$createsql);
+
+	if($result == TRUE)
+    {
+    echo "registered successfully";
+    header("Location:  login-signup.php");
+	}else
+    {
+    echo "error with registration ";
+     }
+
+}
 ?>
-
-
