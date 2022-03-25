@@ -1,27 +1,19 @@
 <!--database connection-->
 <?php
-
-/*$serverName = "localhost";
-$dbUsername = "root";
-$dbPassword = "root";
-$dbName = "Geotag";
-
-$conn = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
-
-if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
-}*/
-
+//database config
 $servername = "localhost";
 $dbname = 'Geotag';
-$username = "root";
-$password = "root";
+$dbusername = "root";
+$dbpassword = "root";
 
-//Connection
-$db = new mysqli($servername, $username, $password, $dbname);
+//new connection creation
+$db = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
+///validate connection
 If  ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);
-}
+}/**else {
+	echo "connection succesful";
+}**/
 
 ?>

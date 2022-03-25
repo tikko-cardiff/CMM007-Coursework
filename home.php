@@ -23,9 +23,12 @@
   <section class ="header" style= "background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
     url(./images/background.jpeg)" >
 
-    <div class="user"></div>
-      <a href="login-signup.php"><i class='bx bxs-user' ></i></a>
+    <div class="user">
+      <a href="login-signup.php"><i class='bx bxs-user'></i></a>
   </div>
+    <div class="logout">
+        <a href="logout.php"><i class='bx bx-log-out'></i></a>
+    </div>
 
     <nav>
         <a class="nav-brand" href="index.html"><img src="./images/logo.png">Geotag<span>.</span></a>
@@ -45,7 +48,7 @@
       <div class="text-box">
         <h1>Discover Aberdeen</h1>
         <p>See & experience Aberdeen through the lens of other tourist</p>
-        <a href="login-signup.php" class="story">Tell your story</a>
+        <a href="" class="story">Tell your story</a>
       </div>
     </section>
 
@@ -126,8 +129,6 @@
           </div>
       </div>
     </div>
-</section>
-</footer>
     <!--Javascript for toggling -->
     <script>
       var navlinks = document.getElementById("navlinks");

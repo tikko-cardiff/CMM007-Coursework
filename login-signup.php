@@ -22,7 +22,7 @@
                     <div class="form-front">
                     <h2>LOGIN</h2>
                     <form action="login-signup.php" method="post">
-                        <input type="text" name="username" class="input-box" placeholder="Username/Email" required>
+                        <input type="text" name="username" class="input-box" placeholder="username" required>
                         <input type="password" name="password" class="input-box" placeholder="Password" required>
                         <input type="checkbox"><span>Remember username</span>
                         <input type="submit" name= "submit" class="submit-btn" value= "Login">
@@ -34,7 +34,7 @@
                     <div class="form-back">
                         <h2>CREATE ACCOUNT</h2>
                         <form action="login-signup.php" method="post">
-                        <input type="text" name="username" class="input-box" placeholder="Username" required>
+                        <input type="text" name="username" class="input-box" placeholder="username" required>
                         <input type="text" name= "email" class="input-box" placeholder="Email address" required>
                         <input type="password" name="password"class="input-box" placeholder="Password" required>
                         <input type="checkbox"><span>Remember username</span>
@@ -59,26 +59,39 @@
         </script>
 
 
-        <section class="footer">
-            <h4>About Us</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, eos. Voluptatibus molestias nam quasi similique odio! <br>Fugit quaerat itaque quam. Dignissimos recusandae velit a qui doloremque ullam ex praesentium ducimus.</p>
+<footer class="page-footer bg-dark " id="footer">
       
-            <div class="social-links">
-              <i class='bx bxl-facebook-circle' ></i>
-              <i class='bx bxl-twitter' ></i>
-              <i class='bx bxl-twitter' ></i>
-              <i class='bx bxl-youtube' ></i>
-              <i class='bx bxl-linkedin-square' ></i>
+      <section class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="about">
+            <h4>About Us</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo, eos. Voluptatibus molestias nam quasi similique <br>odio! Fugit quaerat itaque quam. Dignissimos recusandae <br>velit a qui doloremque ullam ex praesentium ducimus.</p>
+      
+             <div class="social-links">
+            <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-youtube' ></i></a>
+            <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+          </div>
+        </div>
+  
+        <div class="copyright">
+        <p>Copyright <br>Geotag<i class='bx bx-copyright'></i>All rights reserved</p>
+        </div>
+      </section>
             </div>
-            <p>Copyright <br>Geotag<i class='bx bx-copyright'></i>All rights reserved</p>
-          </section>
-          
+        </div>
+      </div>
+  </section>
+  </footer>
 
     </body>
 </html>
 
 
-<!--login PHP-->
+<!--login/signup PHP-->
 <?php
 include_once("dbconnection.php");
 
@@ -92,7 +105,9 @@ if (isset ($_POST['submit']))
 
 		if(mysqli_num_rows($result) == 1)
 		{
-			header("location: index.php");
+            session_start();
+            $_SESSION['id'] = $username;
+			header("location:home.php");
 		}else
 		{
 			echo "Incorrect username or password.";
@@ -108,7 +123,7 @@ if (isset ($_POST['submit']))
   $createsql = "INSERT INTO users (username, password, email) VALUES('$username', '$password', '$email')";
   $createresult=mysqli_query($db,$createsql);
 
-	if($result == TRUE)
+	if($createresult == TRUE)
     {
     echo "registered successfully";
     header("Location:  login-signup.php");
