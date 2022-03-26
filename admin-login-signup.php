@@ -22,8 +22,8 @@
                     <div class="form-front">
                     <h2>ADMIN LOGIN</h2>
                     <form action="admin-login-signup.php" method="post">
-                        <input type="text" name="adminuser" class="input-box" placeholder="admin-user" required>
-                        <input type="password" name="passcode" class="input-box" placeholder="Passcode" required>
+                        <input type="text" name="username" class="input-box" placeholder="Admin" required>
+                        <input type="password" name="password" class="input-box" placeholder="Password" required>
                         <input type="checkbox"><span>Remember username</span>
                         <input type="submit" name= "submit" class="submit-btn" value= "Login">
                         <a href="">Forgot password?</a>
@@ -35,8 +35,8 @@
                         <h2>CREATE ADMIN ACCOUNT</h2>
                         <form action="admin-login-signup.php" method="post">
                         <input type="text" name="name" class="input-box" placeholder="Name" required>
-                        <input type="text" name= "adminuser" class="input-box" placeholder="admin-user" required>
-                        <input type="password" name="passcode"class="input-box" placeholder="Passcode" required>
+                        <input type="text" name= "username" class="input-box" placeholder="Admin" required>
+                        <input type="password" name="password"class="input-box" placeholder="Passcode" required>
                         <input type="text" name= "role" class="input-box" placeholder="User-role" required>
                         <input type="checkbox"><span>Remember username</span>
                         <input type="submit" name= "create"class="submit-btn" value= "Create Account"> 
@@ -97,20 +97,18 @@ include_once("dbconnection.php");
 
 if (isset ($_POST['submit']))
 	{
-		$adminuser=$_POST['adminuser'];
-		$passcode=$_POST['passcode'];
+		$username=$_POST['username'];
+		$password=$_POST['password'];
 
-	$sql="SELECT id FROM admins WHERE adminuser='$adminuser' AND passcode='$passcode'";
+	$sql="SELECT id FROM admins WHERE username='$username' AND password='$password'";
 		$result=mysqli_query($db,$sql);
 
 		if(mysqli_num_rows($result) == 1)
 		{
-            session_start();
-            $_SESSION['id'] = $adminuser;
-			header("location:dashboard.php");
+			header("location: dashboard.php");
 		}else
 		{
-			echo "Incorrect adminuser or passcode.";
+			echo "Incorrect username or password.";
 		}        
 	}
 

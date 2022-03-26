@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,7 +111,7 @@ if (isset ($_POST['submit']))
 
 		if(mysqli_num_rows($result) == 1)
 		{
-            session_start();
+            
             $_SESSION['id'] = $username;
 			header("location:home.php");
 		}else
@@ -126,7 +132,7 @@ if (isset ($_POST['submit']))
 	if($createresult == TRUE)
     {
     echo "registered successfully";
-    header("Location:  login-signup.php");
+    header("Location:login-signup.php");
 	}else
     {
     echo "error with registration ";

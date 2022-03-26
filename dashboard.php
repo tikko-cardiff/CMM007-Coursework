@@ -1,6 +1,15 @@
+<!--<?php
 
+session_start();
 
-?>
+include_once('dbconnection.php');
+
+if (!isset($_SESSION['ID'])) {
+  header("location:admin-login-signup.php");
+  exit();
+}
+?>-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,82 +38,30 @@
     <div class="user">
       <a href="admin-login-signup.php"><i class='bx bxs-user'></i></a>
   </div>
-    <div class="logout">
+    <!--<div class="logout">
         <a href="logout.php"><i class='bx bx-log-out'></i></a>
-    </div>
+    </div>-->
+</section>
 
-    <nav>
-        <a class="nav-brand" href="index.html"><img src="./images/logo.png">Geotag<span>.</span></a>
-        <div class="nav-links" id="navlinks">
-          <i class='bx bx-slider' onclick="hideMenu()"></i>
-          <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">DESTINATION</a></li>
-            <li><a href="PHP/blog.php">SEE & TELL</a></li>
-            <li><a href="">EVENTS</a></li>
-            <li><a href="">ABOUT US</a></li>
-          </ul>
-          </div>
-        <i class='bx bx-menu' onclick="showMenu()" ></i>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="sidebar" style ="height: 569px">
+      <div class="sidebar-sticky">    
+        <ul class="column" style="color: #5b5757; display: flex;">
+
+        </div>
+
       </nav>
+    </div>
+  </div>
+    
+      
 
-      <div class="text-box">
-        <h1>Discover Aberdeen</h1>
-        <p>See & experience Aberdeen through the lens of other tourist</p>
-        <a href="" class="story">Tell your story</a>
-      </div>
-    </section>
 
-    <!--destination-->
-    <section class="destination">
-      <h1>Destination</h1>
-      <p>Places you will love to see</p>
 
-      <div class="row">
-        <div class="destination-col">
-          <h3>Union City</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias atque ullam nostrum eius commodi consequuntur, culpa provident optio animi tempora at sit reiciendis, voluptates aut nulla, molestiae odio suscipit quod.</p>
-        </div>
-       <div class="destination-col">
-          <h3>Bridge of Don</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias atque ullam nostrum eius commodi consequuntur, culpa provident optio animi tempora at sit reiciendis, voluptates aut nulla, molestiae odio suscipit quod.</p>
-        </div>
-        <div class="destination-col">
-          <h3>Bridge of Dee</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias atque ullam nostrum eius commodi consequuntur, culpa provident optio animi tempora at sit reiciendis, voluptates aut nulla, molestiae odio suscipit quod.</p>
-        </div>
-      </div>
-    </section>
 
-    <!--Map-->
-    <section class="maps">
-      <h1>Where would you want to be?</h1>
-      <p>Navigate through the map and select a location</p>
 
-      <div class="row">
-        <div class="maps-col">
-          <img src="./images/unionstreet.jpeg" alt="union street">
-          <div class="layer">
-          <h3>Union Street</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias atque ullam nostrum eius commodi consequuntur, culpa provident optio animi tempora at sit reiciendis, voluptates aut nulla, molestiae odio suscipit quod.</p>
-          </div>
-        </div>
-        <div class="maps-col">
-          <img src="./images/marischalcollege.jpeg" alt="Marischal College">
-          <div class="layer">
-          <h3>Bridge of Don</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias atque ullam nostrum eius commodi consequuntur, culpa provident optio animi tempora at sit reiciendis, voluptates aut nulla, molestiae odio suscipit quod.</p>
-          </div>
-        </div>
-        <div class="maps-col">
-          <img src="./images/aberdeenbeach.jpeg" alt="Aberdeen beach">
-          <div class="layer">
-          <h3>Bridge of Dee</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias atque ullam nostrum eius commodi consequuntur, culpa provident optio animi tempora at sit reiciendis, voluptates aut nulla, molestiae odio suscipit quod.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
 
     <footer class="page-footer bg-dark " id="footer">
