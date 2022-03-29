@@ -63,7 +63,7 @@ session_start();
                 form.style.transform = "rotateY(0deg)";
             }
         </script>
-
+ </body>
 
 <footer class="page-footer bg-dark " id="footer">
       
@@ -93,7 +93,6 @@ session_start();
   </section>
   </footer>
 
-    </body>
 </html>
 
 
@@ -113,7 +112,7 @@ if (isset ($_POST['submit']))
 		{
             
             $_SESSION['id'] = $username;
-			header("location:home.php");
+			header("location:index.php");
 		}else
 		{
 			echo "Incorrect username or password.";

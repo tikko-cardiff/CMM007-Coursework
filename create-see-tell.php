@@ -1,16 +1,13 @@
 <?php
-
 session_start();
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Story dashboard dashboard</title>
+    <title>Create See & Tell</title>
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="./css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,9 +29,22 @@ session_start();
     <div class="user">
       <a href="login-signup.php"><i class='bx bxs-user'></i></a>
   </div>
-    <!--<div class="logout">
+    <div class="logout">
         <a href="logout.php"><i class='bx bx-log-out'></i></a>
-    </div>-->
+    </div>
+
+    <nav>
+        <a class="nav-brand" href="index.html">Geotag<span>.</span></a>
+        <div class="nav-links" id="navlinks">
+          <i class='bx bx-slider' onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="see-tell.php">DESTINATION</a></li>
+            <li><a href="create-see-tell.php">SEE & TELL</a></li>
+          </ul>
+          </div>
+        <i class='bx bx-menu' onclick="showMenu()" ></i>
+      </nav>
 
   <form action='create-see-tell.php' method='post' enctype="multipart/form-data">
   <p><label>Title</label><br />
@@ -57,14 +67,14 @@ session_start();
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo, eos. Voluptatibus molestias nam quasi similique <br>odio! Fugit quaerat itaque quam. Dignissimos recusandae <br>velit a qui doloremque ullam ex praesentium ducimus.</p>
       
              <div class="social-links">
-            <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
-            <a href="#"><i class='bx bxl-twitter' ></i></a>
-            <a href="#"><i class='bx bxl-twitter' ></i></a>
-            <a href="#"><i class='bx bxl-youtube' ></i></a>
-            <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+            <a href="www.facebook.com"><i class='bx bxl-facebook-circle' ></i></a>
+            <a href="www.twitter.com"><i class='bx bxl-twitter' ></i></a>
+            <a href="www.instagram.com"><i class='bx bxl-instagram' ></i></a>
+            <a href="www.youtube.com"><i class='bx bxl-youtube' ></i></a>
+            <a href="www.linkedin.com"><i class='bx bxl-linkedin-square' ></i></a>
           </div>
         </div>
-
+  
         <div class="copyright">
         <p>Copyright <br>Geotag<i class='bx bx-copyright'></i>All rights reserved</p>
         </div>
@@ -74,9 +84,8 @@ session_start();
       </div>
   </section>
   </footer>
-
-    <!--Javascript for toggling -->
-    <script>
+  <!--Javascript for toggling -->
+  <script>
       var navlinks = document.getElementById("navlinks");
       function showMenu(){
         navlinks.style.right ="0";
@@ -85,14 +94,16 @@ session_start();
         navlinks.style.right ="-200px";
       }
     </script>
-  </body>
+
+    </body>
 </html>
+
 
 
 <?php
   include_once('dbconnection.php');
 
-  $username= $_SESSION['id'];
+         $username= $_SESSION['id'];
     $createsql = "SELECT * FROM users WHERE username = '$username' ";
      $createresult=mysqli_query($db,$createsql);
        $user=mysqli_fetch_array($createresult);
@@ -108,7 +119,7 @@ session_start();
            //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             
             $createsql = "INSERT INTO stories (title, image, user, content) VALUES('$title', '$target_File', '$id', '$content')";
-            $createresult=mysqli_query($db,$createsql);
+            $createresult= mysqli_query($db,$createsql);
              // Validate that it's an actual image
              
                 if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $target_File)) 
@@ -119,11 +130,5 @@ session_start();
              else {
                           echo "Sorry, there was an error uploading your file.";
                         }      
-         /*   if($createresult == TRUE)
-             {
-                     echo "post created";
-
-                     header("Location: see-tell.php");
-              }*/
         }
     ?>

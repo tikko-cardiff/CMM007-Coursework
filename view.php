@@ -41,7 +41,7 @@
 
         while ($story = mysqli_fetch_array($result)) 
         { ?>
-            echo    "  <div class="story">
+                       "  <div class="story">
                          <h2><a href="view.php?id=<?php echo $story ['entryid']; ?>"> <?php echo $story ['title']; ?></a></h2>
                           <img src="<?php echo $story ['image'];  ?>" alt=" " class="img"> 
                           <i class='bx bxs-user-circle'><?php echo $story ['username']; ?></i>

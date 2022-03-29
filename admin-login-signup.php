@@ -58,9 +58,8 @@
                 form.style.transform = "rotateY(0deg)";
             }
         </script>
-
-
-<footer class="page-footer bg-dark " id="footer">
+ </body>
+            <footer class="page-footer bg-dark " id="footer">
       
       <section class="footer">
         <div class="container">
@@ -88,7 +87,7 @@
   </section>
   </footer>
 
-    </body>
+    
 </html>
 
 

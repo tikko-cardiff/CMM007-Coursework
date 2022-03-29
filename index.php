@@ -28,15 +28,13 @@
   </div>
 
     <nav>
-        <a class="nav-brand" href="index.html"><img src="./images/logo.png">Geotag<span>.</span></a>
+        <a class="nav-brand" href="index.html">Geotag<span>.</span></a>
         <div class="nav-links" id="navlinks">
           <i class='bx bx-slider' onclick="hideMenu()"></i>
           <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">DESTINATION</a></li>
-            <li><a href="PHP/blog.php">SEE & TELL</a></li>
-            <li><a href="">EVENTS</a></li>
-            <li><a href="">ABOUT US</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="see-tell.php">DESTINATION</a></li>
+            <li><a href="create-see-tell.php">SEE & TELL</a></li>
           </ul>
           </div>
         <i class='bx bx-menu' onclick="showMenu()" ></i>
@@ -45,7 +43,7 @@
       <div class="text-box">
         <h1>Discover Aberdeen</h1>
         <p>See & experience Aberdeen through the lens of other tourist</p>
-        <a href="login-signup.php" class="story">Tell your story</a>
+        <a href="login-signup.php" class="post">Tell your story</a>
       </div>
     </section>
 
@@ -103,31 +101,31 @@
 
     <footer class="page-footer bg-dark " id="footer">
       
-    <section class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="about">
-          <h4>About Us</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo, eos. Voluptatibus molestias nam quasi similique <br>odio! Fugit quaerat itaque quam. Dignissimos recusandae <br>velit a qui doloremque ullam ex praesentium ducimus.</p>
-    
-           <div class="social-links">
-          <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
-          <a href="#"><i class='bx bxl-twitter' ></i></a>
-          <a href="#"><i class='bx bxl-twitter' ></i></a>
-          <a href="#"><i class='bx bxl-youtube' ></i></a>
-          <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+      <section class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="about">
+            <h4>About Us</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo, eos. Voluptatibus molestias nam quasi similique <br>odio! Fugit quaerat itaque quam. Dignissimos recusandae <br>velit a qui doloremque ullam ex praesentium ducimus.</p>
+      
+             <div class="social-links">
+            <a href="www.facebook.com"><i class='bx bxl-facebook-circle' ></i></a>
+            <a href="www.twitter.com"><i class='bx bxl-twitter' ></i></a>
+            <a href="www.instagram.com"><i class='bx bxl-instagram' ></i></a>
+            <a href="www.youtube.com"><i class='bx bxl-youtube' ></i></a>
+            <a href="www.linkedin.com"><i class='bx bxl-linkedin-square' ></i></a>
+          </div>
+        </div>
+  
+        <div class="copyright">
+        <p>Copyright <br>Geotag<i class='bx bx-copyright'></i>All rights reserved</p>
+        </div>
+      </section>
+            </div>
         </div>
       </div>
-
-      <div class="copyright">
-      <p>Copyright <br>Geotag<i class='bx bx-copyright'></i>All rights reserved</p>
-      </div>
-    </section>
-          </div>
-      </div>
-    </div>
-</section>
-</footer>
+  </section>
+  </footer>
     <!--Javascript for toggling -->
     <script>
       var navlinks = document.getElementById("navlinks");
@@ -139,4 +137,4 @@
       }
     </script>
   </body>
-</html>
+ 

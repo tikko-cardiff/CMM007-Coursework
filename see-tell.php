@@ -1,45 +1,54 @@
-<?php session_start() ?>
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
-<html lan="en">
+<html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-    <link rel="stylesheet" href="./CSS/story.css">
-    <link rel="stylesheet" href="./CSS/style.css">
-
-    <link rel="stylesheet" href="./css/boxicons.min.css">
     <title>See & Tell</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--to close/open tab on mobileview-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
   </head>
 
-  <body style="background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7), url(images/loginbackground.jpeg)">
-    <header>
-      <div class="logo">
-          <h1 class=logo-text ><a href="index.html">Geotag<span>.</span></a>
-        </div>
 
-        <i class='bx bx-menu toggle' ></i>
+  <body>
+    <!--NAV BAR--->
+  <section class ="header" style= "background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(./images/background.jpeg)" >
 
-      <ul class="nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">See & Tell</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">About Us</a></li>
-        <!--<li><a href="#">Log In</a></li>
-        <li><a href="#">Create Account</a></li>-->
+    <div class="user">
+      <a href="login-signup.php"><i class='bx bxs-user'></i></a>
+  </div>
+    <div class="logout">
+        <a href="logout.php"><i class='bx bx-log-out'></i></a>
+    </div>
 
-        <li>
-          <a href="#">
-              <i class='bx bxs-user' ></i>
-              User
-            </a>
+    <nav>
+        <a class="nav-brand" href="index.html">Geotag<span>.</span></a>
+        <div class="nav-links" id="navlinks">
+          <i class='bx bx-slider' onclick="hideMenu()"></i>
           <ul>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#" class="logout">Logout</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="see-tell.php">DESTINATION</a></li>
+            <li><a href="create-see-tell.php">SEE & TELL</a></li>
           </ul>
-        </li>
-      </ul>
-    </header>
+          </div>
+        <i class='bx bx-menu' onclick="showMenu()" ></i>
+      </nav>
+
             <div class="slide">
             <h1 class="slide-title">Tell Your Story</h1>
         </div>
@@ -48,16 +57,8 @@
                 <div class="leftcolumn">
                 <?php
   include_once('dbconnection.php');
-          
-         /* if (isset ($_POST['submit']))
-          {
-            $entryid=$_POST['entryid'];
-            $user=$_POST['user'];
-            $title=$_POST['title'];
-            $image=$_POST['image'];
-            $content=$_POST['content'];
-            $datetime=$_POST['datetime'];    }*/
-
+            
+            $username= $_SESSION['id'];
             $sql="SELECT * FROM viewstory";      
         		$result=mysqli_query($db,$sql);
             $stories= mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -71,57 +72,45 @@
                     <p><?php echo $story ['content']; ?></p>
                   </div>
 <?php  } ?>
-                 <!-- <div class="story">
-                    <h2><a href="">A day at Banff Castle</a></h2>
-                    <div>
-                      <img src="/images/castle.jpeg" alt="Banff castle" class="img">
-                      <i class='bx bxs-user-circle'>Oluwaseyi Balogun</i>
-                      <i class='bx bxs-user-circle'>26th March 2022</i>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam aspernatur molestiae illo inventore quaerat ipsum voluptas architecto. Repellat quibusdam explicabo odit maiores sit modi commodi illo dolore? Voluptatibus, eos itaque.</p>
-                  </div>
-
-                  <div class="story">
-                    <h2><a href="">Hiking to mount Banagask</a></h2>
-                    <img src="/images/rgu.jpeg" alt="RGU" class="img">
-                      <i class='bx bxs-user-circle'>Adeseye Fayiga</i>
-                      <i class='bx bxs-user-circle'>26th March 2022</i>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum id, nesciunt ex nisi adipisci aliquam dicta animi explicabo optio veritatis? Veritatis pariatur at, distinctio consectetur deserunt mollitia corporis accusantium beatae?</p>
-                  </div>
-                
-                </div>-->
 
 
-                <div class="rightcolumn">
-                  <div class="story">
-                    <h2>About Us</h2>
-                    <div class="img" style="height:100px;">Image</div>
-                    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-                  </div>
+<footer class="page-footer bg-dark " id="footer">
+      
+      <section class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="about">
+            <h4>About Us</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo, eos. Voluptatibus molestias nam quasi similique <br>odio! Fugit quaerat itaque quam. Dignissimos recusandae <br>velit a qui doloremque ullam ex praesentium ducimus.</p>
+      
+             <div class="social-links">
+            <a href="www.facebook.com"><i class='bx bxl-facebook-circle' ></i></a>
+            <a href="www.twitter.com"><i class='bx bxl-twitter' ></i></a>
+            <a href="www.instagram.com"><i class='bx bxl-instagram' ></i></a>
+            <a href="www.youtube.com"><i class='bx bxl-youtube' ></i></a>
+            <a href="www.linkedin.com"><i class='bx bxl-linkedin-square' ></i></a>
+          </div>
+        </div>
+  
+        <div class="copyright">
+        <p>Copyright <br>Geotag<i class='bx bx-copyright'></i>All rights reserved</p>
+        </div>
+      </section>
+            </div>
+        </div>
+      </div>
+  </section>
+  </footer>
+  <!--Javascript for toggling -->
+  <script>
+      var navlinks = document.getElementById("navlinks");
+      function showMenu(){
+        navlinks.style.right ="0";
+      }
+      function hideMenu(){
+        navlinks.style.right ="-200px";
+      }
+    </script>
 
-                  <div class="story">
-                    <h3>Map</h3>
-                  </div>
-                  
-                  <div class="story">
-                    <h3>Share your stories</h3>
-                    <p>Some text..</p>
-                  </div>
-                </div>
-
-
-                
-              </div>
-
-
-
-<!--https://cdnjs.com/libraries/jquery-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-      <!--Carousel for wrap   https://kenwheeler.github.io/slick/-->
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-      <script src="js/script.js"></script>
-
-
-  </body>
+    </body>
 </html>

@@ -89,26 +89,14 @@ if (!isset($_SESSION['ID'])) {
     <section class="footer">
       <div class="container">
         <div class="row">
-          <div class="about">
-          <h4>About Us</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Explicabo, eos. Voluptatibus molestias nam quasi similique <br>odio! Fugit quaerat itaque quam. Dignissimos recusandae <br>velit a qui doloremque ullam ex praesentium ducimus.</p>
     
-           <div class="social-links">
-          <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
-          <a href="#"><i class='bx bxl-twitter' ></i></a>
-          <a href="#"><i class='bx bxl-twitter' ></i></a>
-          <a href="#"><i class='bx bxl-youtube' ></i></a>
-          <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+          <div class="copyright">
+          <p>Copyright <br>Geotag<i class='bx bx-copyright'></i>All rights reserved</p>
+              </div>
+                   </section>
+        
         </div>
-      </div>
-
-      <div class="copyright">
-      <p>Copyright <br>Geotag<i class='bx bx-copyright'></i>All rights reserved</p>
-      </div>
-    </section>
-          </div>
-      </div>
-    </div>
+       </div>
     <!--Javascript for toggling -->
     <script>
       var navlinks = document.getElementById("navlinks");

@@ -3,16 +3,16 @@
   padding: 0;
   font-family: "Roboto Slab", serif;
 }
-/**
-.container{
+/**.container {
   min-height: 100vh;
-   width: 100%;
-   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/images/access.jpeg);
-   background-position: top;
-   background-size: auto;
-   position: absolute;
- }
-/**/
+  width: 70%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(/images/access.jpeg);
+  background-position: top;
+  background-size: auto;
+  position: absolute;
+}*/
+
 .bxs-user {
   width: 40px;
   height: 40px;
@@ -105,8 +105,6 @@ nav img {
 }
 .text-box h1 {
   font-size: 50px;
-  /**color: white;
-    text-align: center;**/
 }
 .text-box p {
   margin: 10px 0 30px;
@@ -114,6 +112,21 @@ nav img {
   color: white;
 }
 .story {
+  display: inline-block;
+  text-decoration: none;
+  border: 5px solid white;
+  padding: 12px 34px;
+  font-size: 25px;
+  background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7));
+  position: relative;
+  cursor: pointer;
+}
+.story:hover {
+  border: 1px solid #03bb85;
+  background: #03bb85;s
+  transition: 0.5s;
+}
+.post {
   display: inline-block;
   text-decoration: none;
   color: white;
@@ -124,9 +137,9 @@ nav img {
   position: relative;
   cursor: pointer;
 }
-.story:hover {
+.post:hover {
   border: 1px solid #03bb85;
-  background: #03bb85;
+  background-color: #03bb85;
   transition: 4s;
 }
 nav .bx {
@@ -236,8 +249,12 @@ h3 {
 }
 .footer h4 {
   margin-bottom: 25px;
-  margin-top: 20px;
+  margin-top: 90px;
   font-weight: 600;
+  color: #ff8c00;
+}
+.footer p {
+  color: #ff8c00;
 }
 .social-links .bx {
   color: #ff8c00;
