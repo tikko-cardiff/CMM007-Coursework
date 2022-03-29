@@ -22,7 +22,7 @@
                     <div class="form-front">
                     <h2>ADMIN LOGIN</h2>
                     <form action="admin-login-signup.php" method="post">
-                        <input type="text" name="username" class="input-box" placeholder="Admin" required>
+                        <input type="text" name="username" class="input-box" placeholder="Admin-username" required>
                         <input type="password" name="password" class="input-box" placeholder="Password" required>
                         <input type="checkbox"><span>Remember username</span>
                         <input type="submit" name= "submit" class="submit-btn" value= "Login">
@@ -35,8 +35,8 @@
                         <h2>CREATE ADMIN ACCOUNT</h2>
                         <form action="admin-login-signup.php" method="post">
                         <input type="text" name="name" class="input-box" placeholder="Name" required>
-                        <input type="text" name= "username" class="input-box" placeholder="Admin" required>
-                        <input type="password" name="password"class="input-box" placeholder="Passcode" required>
+                        <input type="text" name= "username" class="input-box" placeholder="Admin-username" required>
+                        <input type="password" name="password"class="input-box" placeholder="Password" required>
                         <input type="text" name= "role" class="input-box" placeholder="User-role" required>
                         <input type="checkbox"><span>Remember username</span>
                         <input type="submit" name= "create"class="submit-btn" value= "Create Account"> 
@@ -91,8 +91,9 @@
     </body>
 </html>
 
-<!--admin signup & login PHP-->
+
 <?php
+//admin signup & login PHP
 include_once("dbconnection.php");
 
 if (isset ($_POST['submit']))
@@ -100,26 +101,27 @@ if (isset ($_POST['submit']))
 		$username=$_POST['username'];
 		$password=$_POST['password'];
 
-	$sql="SELECT id FROM admins WHERE username='$username' AND password='$password'";
+	    $sql="SELECT id FROM admins WHERE username='$username' AND password='$password'";
 		$result=mysqli_query($db,$sql);
 
-		if(mysqli_num_rows($result) == 1)
-		{
-			header("location: dashboard.php");
-		}else
-		{
+		if(mysqli_num_rows($result) == 1) { 
+         session_start();
+        $_SESSION['id'] = $username;
+        echo "<script> window.open('dashboard.php', '_self')</script>" ;
+		}
+        else {
 			echo "Incorrect username or password.";
-		}        
+		}       
+        exit (); 
 	}
-
- else if (isset($_POST['create']) ) 
+ else if (isset($_POST['create']) )
 {
-    $adminuser = $_POST['name'];
-	$email= $_POST['adminuser'];
-	$passcode = $_POST['passcode'];
+    $name = $_POST['name'];
+	$username= $_POST['username'];
+	$password = $_POST['password'];
     $role = $_POST['role'];
 	
-  $createsql = "INSERT INTO admins (name, adminuser, passcode, role) VALUES('$name', $adminuser', '$passcode', '$role')";
+  $createsql = "INSERT INTO admins (name, username, password, role) VALUES('$name', $username', '$password', '$role')";
   $createresult=mysqli_query($db,$createsql);
 
 	if($createresult == TRUE)
@@ -130,6 +132,5 @@ if (isset ($_POST['submit']))
     {
     echo "error with registration ";
      }
-
 }
 ?>

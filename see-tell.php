@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lan="en">
   <head>
@@ -39,26 +40,38 @@
         </li>
       </ul>
     </header>
-
-
-    
-
-        <div class="slide">
+            <div class="slide">
             <h1 class="slide-title">Tell Your Story</h1>
         </div>
 
             <div class="row">
                 <div class="leftcolumn">
+                <?php
+  include_once('dbconnection.php');
+          
+         /* if (isset ($_POST['submit']))
+          {
+            $entryid=$_POST['entryid'];
+            $user=$_POST['user'];
+            $title=$_POST['title'];
+            $image=$_POST['image'];
+            $content=$_POST['content'];
+            $datetime=$_POST['datetime'];    }*/
 
+            $sql="SELECT * FROM viewstory";      
+        		$result=mysqli_query($db,$sql);
+            $stories= mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            foreach ($stories as $story) { ?>
                   <div class="story">
-                    <h2><a href="">Our Visit to Duthie Park</a></h2>
-                    <img src="/images/unionstreet.jpeg" alt="Union street" class="img">
-                      <i class='bx bxs-user-circle'>Alex Bazslo</i>
-                      <i class='bx bxs-user-circle'>26th March 2022</i>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ex harum quidem qui tempore repellat omnis aspernatur earum enim nostrum reiciendis vitae facere alias dignissimos fuga necessitatibus, quasi fugiat aperiam.</p>
+                    <h2><a href="view.php?id=<?php echo $story ['entryid']; ?>"> <?php echo $story ['title']; ?></a></h2>
+                    <img src="<?php echo $story ['image'];  ?>" alt="Union street" class="img">
+                      <i class='bx bxs-user-circle'><?php echo $story ['username']; ?></i>
+                      <i class='bx bxs-user-circle'><?php echo  date ("m-d-y", strtotime ($story ['datetime'])); ?></i>
+                    <p><?php echo $story ['content']; ?></p>
                   </div>
-
-                  <div class="story">
+<?php  } ?>
+                 <!-- <div class="story">
                     <h2><a href="">A day at Banff Castle</a></h2>
                     <div>
                       <img src="/images/castle.jpeg" alt="Banff castle" class="img">
@@ -75,7 +88,7 @@
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum id, nesciunt ex nisi adipisci aliquam dicta animi explicabo optio veritatis? Veritatis pariatur at, distinctio consectetur deserunt mollitia corporis accusantium beatae?</p>
                   </div>
                 
-                </div>
+                </div>-->
 
 
                 <div class="rightcolumn">

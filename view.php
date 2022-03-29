@@ -4,9 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin dashboard</title>
+    <title>Story dashboard dashboard</title>
     <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="stylesheet" href="./CSS/dashboard.css">
     <link rel="stylesheet" href="./css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,58 +24,32 @@
     url(./images/background.jpeg)" >
 
     <div class="user">
-      <a href="admin-login-signup.php"><i class='bx bxs-user'></i></a>
+      <a href="login-signup.php"><i class='bx bxs-user'></i></a>
   </div>
     <!--<div class="logout">
         <a href="logout.php"><i class='bx bx-log-out'></i></a>
     </div>-->
-</section>
-<main>
-  <div class="content">
-    <table>
-      <thead>
-        <tr>
-          <th>User Id</th>
-          <th>Username</th>
-          <th>Email</th>
-          <th>Delete</th>
-       </tr>
-</thead>
 
-<tbody>
-  <?php
-  include_once('dbconnection.php');
-      $query = 'SELECT * FROM users';
-      $result = mysqli_query($db,$query);
+    <?php
+    include_once("dbconnection.php");
 
-      while ($users = mysqli_fetch_array($result)) { ?>
+    if (isset($_GET['id']));
+    {
+        $id=$_GET['id'];
+        $sql="SELECT * FROM viewstory WHERE entryid = '$id' ";
+        $result = mysqli_query($db,$sql);
 
-
-        <tr>
-<td><?php echo $users['uid']?></td>
-<td><?php echo $users['username']?></td>
-<td><?php echo $users['email']?></td>
-<td>
-   <button class="del-btn"><a href="delete.php?uid=<?php echo $users ['uid'];?>"><i class='bx bxs-folder-minus'></i></a></button>
-      </td>
-        </tr>
-    <?php  } 
-       /*
-
-session_start();
-
-include_once('dbconnection.php');
-
-if (!isset($_SESSION['ID'])) {
-  header("location:admin-login-signup.php");
-  exit();
-}
-*/
-    ?>
-</tbody>
-</table>
-  </div>
-  </main>
+        while ($story = mysqli_fetch_array($result)) 
+        { ?>
+            echo    "  <div class="story">
+                         <h2><a href="view.php?id=<?php echo $story ['entryid']; ?>"> <?php echo $story ['title']; ?></a></h2>
+                          <img src="<?php echo $story ['image'];  ?>" alt=" " class="img"> 
+                          <i class='bx bxs-user-circle'><?php echo $story ['username']; ?></i>
+                         <i class='bx bxs-user-circle'><?php echo  date ("m-d-y", strtotime ($story ['datetime'])); ?></i>
+                       <p><?php echo $story ['content']; ?></p>
+                       </div>";
+   <?php     }
+    } ?>
 
 
 
@@ -109,15 +82,6 @@ if (!isset($_SESSION['ID'])) {
           </div>
       </div>
     </div>
-    <!--Javascript for toggling -->
-    <script>
-      var navlinks = document.getElementById("navlinks");
-      function showMenu(){
-        navlinks.style.right ="0";
-      }
-      function hideMenu(){
-        navlinks.style.right ="-200px";
-      }
-    </script>
+
   </body>
 </html>

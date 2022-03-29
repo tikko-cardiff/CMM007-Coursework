@@ -4,9 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin dashboard</title>
+    <title>Story dashboard dashboard</title>
     <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="stylesheet" href="./CSS/dashboard.css">
     <link rel="stylesheet" href="./css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,13 +31,16 @@
     </div>-->
 </section>
 <main>
-  <div class="content">
-    <table>
+  <div class="table-responsive">
+    <table class="table table-striped">
       <thead>
         <tr>
-          <th>User Id</th>
-          <th>Username</th>
-          <th>Email</th>
+          <th>Entry Id</th>
+          <th>User</th>e
+          <th>Title</th>
+          <th>Image</th>
+          <th>Content</th>
+          <th>Date/Time</th>
           <th>Delete</th>
        </tr>
 </thead>
@@ -46,18 +48,22 @@
 <tbody>
   <?php
   include_once('dbconnection.php');
-      $query = 'SELECT * FROM users';
+      $query = 'SELECT * FROM stories';
       $result = mysqli_query($db,$query);
 
-      while ($users = mysqli_fetch_array($result)) { ?>
+      while ($stories = mysqli_fetch_array($result)) { 
+          ?>
 
 
         <tr>
-<td><?php echo $users['uid']?></td>
-<td><?php echo $users['username']?></td>
-<td><?php echo $users['email']?></td>
+<td><?php echo $stories['entryid']?></td>
+<td><?php echo $stories['user']?></td>
+<td><?php echo $stories['title']?></td>
+<td><?php echo $stories['image']?></td>
+<td><?php echo $stories['content']?></td>
+<td><?php echo $stories['datetime']?></td>
 <td>
-   <button class="del-btn"><a href="delete.php?uid=<?php echo $users ['uid'];?>"><i class='bx bxs-folder-minus'></i></a></button>
+    <a href="delete.php?sid=<?php echo $stories ['entryid'];?>"><i class='bx bxs-folder-minus'></i></a>
       </td>
         </tr>
     <?php  } 

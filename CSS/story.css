@@ -1,5 +1,5 @@
 * {
-    box-sizing:border-box;
+  box-sizing: border-box;
 }
 body {
   padding: 0px;
@@ -8,65 +8,65 @@ body {
   font-family: Roboto Slab;
 }
 h1 h2 h3 h4 h5 h6 {
-    font-family: Roboto Slab;
+  font-family: Roboto Slab;
 }
 header {
   background: #ff8c00;
   height: 60px;
 }
-header .logo-text a{
+header .logo-text a {
   float: left;
   height: 60px;
   color: white;
   margin-left: 5px;
   margin: 10px;
 }
-header span{
-    color: #03bb85;
+header span {
+  color: #03bb85;
 }
 header ul {
   float: right;
-  margin:0px;
+  margin: 0px;
   padding: 0px;
-  list-style:none;
+  list-style: none;
 }
 header ul li {
-    float: left;
-    position: relative;
+  float: left;
+  position: relative;
 }
 header ul li ul {
-    position: absolute;
-    top: 66px;
-    right: 0px;
-    width: 180px;
-    display: none;
+  position: absolute;
+  top: 66px;
+  right: 0px;
+  width: 180px;
+  display: none;
 }
-header ul li:hover ul{
-    display: block;
+header ul li:hover ul {
+  display: block;
 }
 header ul li ul li {
-    width: 100%;
+  width: 100%;
 }
-header ul li ul li a{
-    padding: 10px;
-    color: black;
+header ul li ul li a {
+  padding: 10px;
+  color: black;
 }
-header ul li ul li a:hover{
-    background: #ff8c00;
-    width:  100%;
+header ul li ul li a:hover {
+  background: #ff8c00;
+  width: 100%;
 }
 header .toggle {
   display: none;
 }
 header ul li a {
-    display: block;
-    padding: 21px;
-   color: white;
+  display: block;
+  padding: 21px;
+  color: white;
   text-decoration: none;
   font-size: 21px;
 }
-header ul li a:after{
-  content: ' ';
+header ul li a:after {
+  content: " ";
   width: 0%;
   height: 2px;
   background: #03bb85;
@@ -74,79 +74,79 @@ header ul li a:after{
   margin: auto;
   transition: 0.5s;
 }
-header ul li a:hover::after{ 
-    width: 100%;
+header ul li a:hover::after {
+  width: 100%;
 }
 header .bxs-user {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 /*page wrap*/
 
-.slide .slide-title{
-    text-align: center;
-    margin: 30px 30px;
-    font-size: 36px;
-    font-weight: 600;
-    display: flex;
+.slide .slide-title {
+  text-align: center;
+  margin: 30px 30px;
+  font-size: 36px;
+  font-weight: 600;
+  display: flex;
 }
 .leftcolumn {
-    float: left;
-    width: 75%;
-  }
-  .rightcolumn {
-    float: left;
-    width: 25%;
-    padding-left: 20px;
-  }
-  .img {
-    background-color:none;
-    width: 100%;
-    padding: 20px;
-    height: 400px;
-  }
-  .story {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-  }
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  float: left;
+  width: 75%;
+}
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+.img {
+  background-color: black;
+  width: 100%;
+  padding: 20px;
+  height: 400px;
+}
+.story {
+  background-color: black;
+  padding: 20px;
+  margin-top: 20px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 /*to adjust for mobile view*/
-@media (max-width:700px){
-header {
-        position: relative;
- }
-header ul {
+@media (max-width: 700px) {
+  header {
+    position: relative;
+  }
+  header ul {
     width: 100%;
     background: #ff8c00;
     overflow: hidden;
-}
-header ul li {
+  }
+  header ul li {
     width: 100%;
-}
-header ul li ul{
+  }
+  header ul li ul {
     position: static;
     width: 100%;
-    display: block;   
-}
-header ul li ul li a{
+    display: block;
+  }
+  header ul li ul li a {
     padding: 10px;
     background: #ff8c00;
     padding-left: 50px;
-}
-.display-toggle {
+  }
+  .display-toggle {
     max-height: 100%;
-}
-header .toggle{
+  }
+  header .toggle {
     display: block;
     position: absolute;
     right: 20px;
     top: 20px;
     font-size: 35px;
-}
+  }
 }

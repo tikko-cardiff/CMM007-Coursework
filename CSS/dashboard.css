@@ -1,0 +1,29 @@
+/*Admin dashboard*/
+.message {
+  color: #03bb85;
+  font-family: "Roboto Slab";
+  margin-left: 500px;
+}
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid black;
+}
+.th .td {
+  text-align: left;
+  padding: 8px;
+}
+.del-btn {
+  width: 80%;
+  height: 32px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  background: linear-gradient(45deg, #ff8c00, #03bb85);
+  border-radius: 50px;
+  padding: 0 10px;
+  font-size: 18px;
+  outline: none;
+  margin: 35 0 10px;
+  cursor: pointer;
+}
