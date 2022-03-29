@@ -17,18 +17,30 @@
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
   </head>
 
-
   <body>
     <!--NAV BAR--->
   <section class ="header" style= "background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
     url(./images/background.jpeg)" >
 
-    <div class="user">
+<div class="user">
       <a href="admin-login-signup.php"><i class='bx bxs-user'></i></a>
   </div>
-    <!--<div class="logout">
+    <div class="logout">
         <a href="logout.php"><i class='bx bx-log-out'></i></a>
-    </div>-->
+    </div>
+
+    <nav>
+        <a class="nav-brand" href="index.html">Geotag<span>.</span></a>
+        <div class="nav-links" id="navlinks">
+          <i class='bx bx-slider' onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="dashboard.php">Users</a></li>
+            <li><a href="story-dashboard.php">User Stories</a></li>
+          </ul>
+          </div>
+        <i class='bx bx-menu' onclick="showMenu()" ></i>
+      </nav>
+
 </section>
 <main>
   <div class="table-responsive">

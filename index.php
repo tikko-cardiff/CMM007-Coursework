@@ -33,8 +33,8 @@
           <i class='bx bx-slider' onclick="hideMenu()"></i>
           <ul>
             <li><a href="index.php">HOME</a></li>
-            <li><a href="see-tell.php">DESTINATION</a></li>
-            <li><a href="create-see-tell.php">SEE & TELL</a></li>
+            <li><a href="login-signup.php">DESTINATION</a></li>
+            <li><a href="login-signup.php">SEE & TELL</a></li>
           </ul>
           </div>
         <i class='bx bx-menu' onclick="showMenu()" ></i>

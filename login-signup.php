@@ -112,7 +112,7 @@ if (isset ($_POST['submit']))
 		{
             
             $_SESSION['id'] = $username;
-			header("location:index.php");
+			header("location:see-tell.php");
 		}else
 		{
 			echo "Incorrect username or password.";

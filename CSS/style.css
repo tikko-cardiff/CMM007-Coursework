@@ -112,19 +112,14 @@ nav img {
   color: white;
 }
 .story {
-  display: inline-block;
+  display: block;
   text-decoration: none;
   border: 5px solid white;
-  padding: 12px 34px;
+  padding: 34px 45px;
   font-size: 25px;
-  background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7));
+  background: white;
   position: relative;
   cursor: pointer;
-}
-.story:hover {
-  border: 1px solid #03bb85;
-  background: #03bb85;s
-  transition: 0.5s;
 }
 .post {
   display: inline-block;
